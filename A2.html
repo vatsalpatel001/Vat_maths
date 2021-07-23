@@ -1,0 +1,48 @@
+<head>
+	<title>Maths Trick By Vatsal</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="svg.js"></script>
+<script type="text/javascript" src="fraction.js"></script>
+<script type="text/javascript" src="jq.js"></script>
+
+<script type="text/javascript">
+	
+
+
+
+let Q1=(R1,R2,m2,d2)=>{return `અનિલને સુનિલ કરતા ${R1}% વધારે મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા ઓછા મળે ?<br>
+<details>
+  <summary>So Hint</summary>
+  <p>${f1}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${R2}</p>
+</details>`};
+let Q2=(R1,R3,m2,d2)=>{return `અનિલને સુનિલ કરતા ${R1}% ઓછા મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા વધારે મળે ?<br>
+<details>
+  <summary>So Hint</summary>
+  <p>${f2}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${R3}</p>
+</details>`};
+
+Q1f();
+function Q1f(){
+let R1=MM(100,10);
+let R2=new Fraction((R1*100),(100+R1));
+let R3=new Fraction((R1*100),(100-R1));
+console.log(R2.toString().length)
+
+$('#box').append(eval("Q"+S_arr([1,2])[0]+"(R1,R2)")); 
+
+
+}
+
+</script>
+</body>

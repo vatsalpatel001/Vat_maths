@@ -1,0 +1,46 @@
+<head>
+	<title>Maths Trick By Vatsal</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="svg.js"></script>
+<script type="text/javascript" src="jq.js"></script>
+
+<script type="text/javascript">
+	
+
+
+
+let Q1=(m1,d1,m2,d2)=>{return `${m1} વ્યક્તિ ${d1} દિવસ માં એક કામ પૂરું કરે તો આ એક કામ ${d2} દિવસ માં પૂરું કરવા કેટલા વ્યક્તિ ની જરૂર પડે ?<br>
+<details>
+  <summary>So Hint</summary>
+  <p>m1*d1*h1*w1 = m2*d2*h2*w2</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${m2}</p>
+</details>`};
+let Q2=(m1,d1,m2,d2)=>{return `${m1} વ્યક્તિ ${d1} દિવસ માં એક કામ પૂરું કરે તો ${m2} માણસો આ કામ કેટલા દિવસ માં પુરુ કરે ?<br>
+<details>
+  <summary>So Hint</summary>
+  <p>m1*d1=m2*d2</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${d2}${f1}</p>
+</details>	`};
+Q1f();
+function Q1f(){
+let m1=1,d1=1,d2=1,m2=m1*d1/d2;
+while(parseInt(m2)!=m2 || m2>100 || m1==d2 || m1==d1 || d1==d2){
+m1=MM(50,5);d1=MM(50,5);d2=MM(50,5);m2=m1*d1/d2;
+}
+
+$('#box').append(eval("Q"+S_arr([1,2])[0]+"(m1,d1,m2,d2)")); 
+
+
+}
+
+</script>
+</body>
