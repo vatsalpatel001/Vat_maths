@@ -13,36 +13,226 @@
 <script type="text/javascript">
 	
 
+// ઘીના ભાવમાં 25 ટકાનો વધારો થતાં વપરાશમાં કેટલા ટકા ઘટાડો કરવાથી ખર્ચ વધશે નહિ  ?
 
 
-let Q1=(R1,R2,m2,d2)=>{return `અનિલને સુનિલ કરતા ${R1}% વધારે મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા ઓછા મળે ?<br>
+let Q11=(R1,R2,R3)=>{
+
+let A=`ઘીના ભાવમાં ${R1} ટકાનો <b>વધારો</b> થતાં વપરાશમાં કેટલા ટકા <b>ઘટાડો</b> કરવાથી ખર્ચ વધશે નહિ  ?`;
+let B=`અનિલને સુનિલ કરતા ${R1}% <b>વધારે</b> મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા <b>ઓછા</b> મળે ?`
+
+
+
+  return `<div class="bgDiv"> ${S_arr([A,B])[0]}<br>
 <details>
   <summary>So Hint</summary>
   <p>${f1}</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${R2}</p>
-</details>`};
-let Q2=(R1,R3,m2,d2)=>{return `અનિલને સુનિલ કરતા ${R1}% ઓછા મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા વધારે મળે ?<br>
+</details></div>`};
+let Q12=(R1,R2,R3)=>{
+let A=`દૂધના ભાવમાં ${R1} ટકાનો <b>ઘટાડો</b> થાય છે, વપરાશમાં કેટલા ટકાનો વધારો કરવામાં આવેતો ખર્ચ અગાઉના જેટલુજ રહશે ?`;
+let B= `અનિલને સુનિલ કરતા ${R1}% <b>ઓછા</b> મળે છે તો સુનીલને અનિલ કરતા કેટલા ટાકા <b>વધારે</b> મળે ?`;
+
+  return `<div class="bgDiv"> ${S_arr([A,B])[0]}<br>
 <details>
   <summary>So Hint</summary>
   <p>${f2}</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${R3}</p>
-</details>`};
+</details></div>`};
 
-Q1f();
-function Q1f(){
-let R1=MM(100,10);
-let R2=new Fraction((R1*100),(100+R1));
-let R3=new Fraction((R1*100),(100-R1));
-console.log(R2.toString().length)
+let Q21=(A,B,Ans1,Ans2)=>{
 
-$('#box').append(eval("Q"+S_arr([1,2])[0]+"(R1,R2)")); 
+if(Ans1>0){
+  Ans1=Ans1+"% નો <b>વધારો</b>"
+}else if(Ans1<0){
+  Ans1=Math.abs(Ans1)+"% નો <b>ધટાડો</b>"
+}
 
+  return `<div class="bgDiv"> મોબાઈલનો એક વેપારી મોબાઈલની કિંમતમાં ${A}% નો <b>વધારો</b> કરે છે જેથી તેના વેચાણમાં ${B}% નો <b>ધટાડો</b> થાય છે તો એકંદરે વેપારમાં શું ફરક પડે ? 
+<details>
+  <summary>So Hint</summary>
+  <p>${f3}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans1}</p>
+</details></div>`}
+let Q22=(A,B,Ans1,Ans2)=>{
+
+if(Ans2>0){
+  Ans2=Ans2+"% નો <b>વધારો</b>"
+}else if(Ans2<0){
+  Ans2=Math.abs(Ans2)+"% નો <b>ધટાડો</b>"
+}
+
+  return `<div class="bgDiv"> મોબાઈલનો એક વેપારી મોબાઈલની કિંમતમાં ${A}% નો <b>ધટાડો</b> કરે છે જેથી તેના વેચાણમાં ${B}% નો <b>વધારો</b> થાય છે તો એકંદરે વેપારમાં શું ફરક પડે ? 
+<details>
+  <summary>So Hint</summary>
+  <p>${f4}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans2}</p>
+</details></div>`}
+
+let Q23=(A,B,Ans)=>{
+  Ans=Ans+"% નો <b>વધારો</b>"
+  return `<div class="bgDiv"> એક વ્યક્તિની આવકમાં ક્રમિક ${A} ટકા અને ${B} ટકાનો વધારો થાય છે તો તેની આવકમાં કુલ કેટલા ટકાનો વધારો થયો ગણાય ?
+  <details>
+  <summary>So Hint</summary>
+  <p>${f5}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans}</p>
+</details></div>`;
 
 }
+let Q31=(x,y,Ans)=>{
+    Ans=Ans +"% નો <b>વધારો</b>";
+return `<div class="bgDiv"> જો ચાનો ભાવ રૂ. ${x} થી <b>વધીને</b> રૂ. ${y} થાય તો ચાના ભાવમાં કેટલા ટકા <b>વધારો</b> થયો ગણાય ?
+<details>
+  <summary>So Hint</summary>
+  <p>${f7}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans}</p>
+</details></div>`;
+}
+let Q32=(x,y,Ans)=>{
+  Ans=Ans +"% નો <b>ધટાડો</b>";
+return `<div class="bgDiv">જો ખાંડનો ભાવ  રૂ. ${y} થી <b>ઘટીને</b> રૂ. ${x} થાય છે તો ખાડં ના ભાવમાં કેટલા ટકાનો <b>ઘટાડો</b> થયો ગણાય ? 
+<details>
+  <summary>So Hint</summary>
+  <p>${f6}</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans}</p>
+</details></div>`;
+}
+let Q33=(x,y,Ans)=>{
+ 
+return `<div class="bgDiv">${x} એ ${y} કરતા કેટલા ટાકા <b>ઓછી</b> છે ? 
+<details>
+  <summary>So Hint</summary>
+  <p>${f6}<br>જેના કરતા = X</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans}</p>
+</details></div>`;
+}
+let Q34=(x,y,Ans)=>{
+ 
+return `<div class="bgDiv">${y} એ ${x} કરતા કેટલા ટાકા <b>વધારે</b> છે ? 
+<details>
+  <summary>So Hint</summary>
+  <p>${f6}<br>જેના કરતા = X</p>
+</details><details>
+  <summary>So Answer</summary>
+  <p>${Ans}</p>
+</details></div>`;
+}
+
+init()
+function init(){
+  $('#box').html(`<button id="reset" class="btn">New Questions</button>`);
+  $('#reset').on("click",init)
+  Q1f();
+  Q2f();
+  Q3f();
+  Q4f();
+}
+
+
+
+function Q1f(){
+let R1=MM(100,3);
+let R2=new Fraction((R1*100),(100+R1));
+let R3=new Fraction((R1*100),(100-R1));
+// console.log(R2.toString().split(" ")[0].length)
+if(R2.toString().split(" ")[0]*R2.toString().split("/")[1]>200){
+  Q1f();
+  return;
+}
+$('#box').append(eval("Q1"+S_arr([1,2])[0]+"(R1,R2,R3)")); 
+}
+
+
+
+function Q2f(){
+
+let A=MM(99,3);
+let B=MM(70,3);
+// let R3=A+(-B)+((A+(-B))/100);
+let Ans=A+B+((A*B)/100);
+let Ans1=A+(-B)+((A*(-B))/100);
+let Ans2=(-A)+(B)+(((-A)*B)/100);
+
+if(parseInt(Ans1)!=Ans1){
+  Q2f();
+  return;
+};
+
+if(S_arr([1,2])[0]==1){
+
+$('#box').append(eval("Q2"+S_arr([1,2])[0]+"(A,B,Ans1,Ans2)")); 
+}else{
+
+$('#box').append(Q23(A,B,Ans)); 
+}
+
+}
+
+function Q3f(){
+
+let X=MM(70,3);
+let Y=MM(X+30,X+2);
+
+let Ans1=((Y-X)*100)/X;
+let Ans2=((Y-X)*100)/Y;
+
+if((parseInt(Ans2)==Ans2 && Ans2<100)){
+  $('#box').append(Q32(X,Y,Ans2)); 
+  $('#box').append(Q33(X,Y,Ans2)); 
+}else if((parseInt(Ans1)==Ans1 && Ans1<100)){
+ $('#box').append(Q31(X,Y,Ans1));
+ $('#box').append(Q34(X,Y,Ans1)); 
+}else{
+Q3f();
+return;
+}
+
+}
+
+
+function Q4f(){
+
+let X=MM(70,3);
+let Y=100-X;
+let A=MM(500,30);
+
+let Ans1=(100*A)/Math.abs(X-Y);
+if(parseInt(Ans1)!=Ans1 ){
+  Q4f();
+  return;
+}
+
+// console.log(Ans1)
+// if((parseInt(Ans2)==Ans2 && Ans2<100)){
+//   $('#box').append(Q32(X,Y,Ans2)); 
+//   $('#box').append(Q33(X,Y,Ans2)); 
+// }else if((parseInt(Ans1)==Ans1 && Ans1<100)){
+//  $('#box').append(Q31(X,Y,Ans1));
+//  $('#box').append(Q34(X,Y,Ans1)); 
+// }else{
+// Q3f();
+// return;
+// }
+
+}
+
+
 
 </script>
 </body>
