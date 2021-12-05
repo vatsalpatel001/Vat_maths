@@ -2,16 +2,26 @@
 	<title>Maths Trick By Vatsal</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.css"/> 
+    
+       
 </head>
 <body>
 <div id="box"></div>
 <script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="svg.js"></script>
 <script type="text/javascript" src="fraction.js"></script>
 <script type="text/javascript" src="jq.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
 <script type="text/javascript">
-	
+ function mathRender() {
+     var MQ = MathQuill.getInterface(2);
+   var problemSpan = document.querySelectorAll('.problem');
+   problemSpan.forEach(el=>{
+   MQ.StaticMath(el);
+   })
+ }
+
+
 
 // ઘીના ભાવમાં 25 ટકાનો વધારો થતાં વપરાશમાં કેટલા ટકા ઘટાડો કરવાથી ખર્ચ વધશે નહિ  ?
 
@@ -26,7 +36,7 @@ let B=`અનિલને સુનિલ કરતા ${R1}% <b>વધારે
   return `<div class="bgDiv"> ${S_arr([A,B])[0]}<br>
 <details>
   <summary>So Hint</summary>
-  <p>${f1}</p>
+  <p class="problem">\\frac{R}{100+R}100</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${R2}</p>
@@ -38,7 +48,7 @@ let B= `અનિલને સુનિલ કરતા ${R1}% <b>ઓછા</b> 
   return `<div class="bgDiv"> ${S_arr([A,B])[0]}<br>
 <details>
   <summary>So Hint</summary>
-  <p>${f2}</p>
+  <p class="problem">\\frac{R}{100-R}100</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${R3}</p>
@@ -55,7 +65,7 @@ if(Ans1>0){
   return `<div class="bgDiv"> મોબાઈલનો એક વેપારી મોબાઈલની કિંમતમાં ${A}% નો <b>વધારો</b> કરે છે જેથી તેના વેચાણમાં ${B}% નો <b>ધટાડો</b> થાય છે તો એકંદરે વેપારમાં શું ફરક પડે ? 
 <details>
   <summary>So Hint</summary>
-  <p>${f3}</p>
+  <p class="problem">A+(-B)+\\frac{A*(-B)}{100}</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans1}</p>
@@ -71,7 +81,7 @@ if(Ans2>0){
   return `<div class="bgDiv"> મોબાઈલનો એક વેપારી મોબાઈલની કિંમતમાં ${A}% નો <b>ધટાડો</b> કરે છે જેથી તેના વેચાણમાં ${B}% નો <b>વધારો</b> થાય છે તો એકંદરે વેપારમાં શું ફરક પડે ? 
 <details>
   <summary>So Hint</summary>
-  <p>${f4}</p>
+    <p class="problem">(-A)+(B)+\\frac{(-A)*(B)}{100}</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans2}</p>
@@ -82,7 +92,7 @@ let Q23=(A,B,Ans)=>{
   return `<div class="bgDiv"> એક વ્યક્તિની આવકમાં ક્રમિક ${A} ટકા અને ${B} ટકાનો વધારો થાય છે તો તેની આવકમાં કુલ કેટલા ટકાનો વધારો થયો ગણાય ?
   <details>
   <summary>So Hint</summary>
-  <p>${f5}</p>
+    <p class="problem">(A)+(B)+\\frac{(A)*(B)}{100}</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans}</p>
@@ -94,7 +104,7 @@ let Q31=(x,y,Ans)=>{
 return `<div class="bgDiv"> જો ચાનો ભાવ રૂ. ${x} થી <b>વધીને</b> રૂ. ${y} થાય તો ચાના ભાવમાં કેટલા ટકા <b>વધારો</b> થયો ગણાય ?
 <details>
   <summary>So Hint</summary>
-  <p>${f7}</p>
+<p class="problem">\\frac{y-x}{x}100</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans}</p>
@@ -105,7 +115,7 @@ let Q32=(x,y,Ans)=>{
 return `<div class="bgDiv">જો ખાંડનો ભાવ  રૂ. ${y} થી <b>ઘટીને</b> રૂ. ${x} થાય છે તો ખાડં ના ભાવમાં કેટલા ટકાનો <b>ઘટાડો</b> થયો ગણાય ? 
 <details>
   <summary>So Hint</summary>
-  <p>${f6}</p>
+ <p class="problem">\\frac{x-y}{x}100</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans}</p>
@@ -116,7 +126,7 @@ let Q33=(x,y,Ans)=>{
 return `<div class="bgDiv">${x} એ ${y} કરતા કેટલા ટાકા <b>ઓછી</b> છે ? 
 <details>
   <summary>So Hint</summary>
-  <p>${f6}<br>જેના કરતા = X</p>
+  <p> <p class="problem">\\frac{x-y}{x}100</p><br>જેના કરતા = X</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans}</p>
@@ -127,7 +137,7 @@ let Q34=(x,y,Ans)=>{
 return `<div class="bgDiv">${y} એ ${x} કરતા કેટલા ટાકા <b>વધારે</b> છે ? 
 <details>
   <summary>So Hint</summary>
-  <p>${f6}<br>જેના કરતા = X</p>
+  <p> <p class="problem">\\frac{x-y}{x}100</p><br>જેના કરતા = X</p>
 </details><details>
   <summary>So Answer</summary>
   <p>${Ans}</p>
@@ -142,6 +152,7 @@ function init(){
   Q2f();
   Q3f();
   Q4f();
+  mathRender();
 }
 
 
